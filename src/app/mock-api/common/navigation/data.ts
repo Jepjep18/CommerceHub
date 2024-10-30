@@ -12,7 +12,7 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 title: 'Dashboard',
                 type: 'basic',
                 icon : 'heroicons_outline:chart-pie',
-                link: ''
+                link: 'dashboard'
             }
         ]
     },
@@ -32,14 +32,14 @@ export const defaultNavigation: FuseNavigationItem[] = [
                         title: 'View Users',
                         type: 'basic',
                         icon: 'heroicons_outline:users', 
-                        link: '',
+                        link: 'admins/view-users',
                     },
                     {
                         id: 'roles-and-permission',
                         title: 'Roles & Permission',
                         type: 'basic',
                         icon: 'heroicons_outline:shield-check', 
-                        link: ''
+                        link: 'admins/roles-and-permission'
                     }
                 ]
             }
@@ -61,21 +61,21 @@ export const defaultNavigation: FuseNavigationItem[] = [
                         title: 'View Products',
                         type: 'basic',
                         icon: 'heroicons_outline:collection', 
-                        link: '',
+                        link: 'product-management/view-products',
                     },
                     {
                         id: 'add-products',
                         title: 'Add Products',
                         type: 'basic',
                         icon: 'heroicons_outline:plus-circle', 
-                        link: ''
+                        link: 'product-management/add-products',
                     },
                     {
                         id: 'categories',
                         title: 'Categories',
                         type: 'basic',
                         icon: 'heroicons_outline:tag', 
-                        link: ''
+                        link: 'product-management/categories',
                     }
                 ]
             }
@@ -97,14 +97,14 @@ export const defaultNavigation: FuseNavigationItem[] = [
                         title: 'View Orders',
                         type: 'basic',
                         icon : 'heroicons_outline:eye', // Icon for viewing orders
-                        link: ''
+                        link: 'order-management/view-orders'
                     },
                     {
                         id: 'order-status-management',
                         title: 'Order Status Management',
                         type: 'basic',
                         icon : 'heroicons_outline:adjustments', // Icon for managing order statuses
-                        link: ''
+                        link: 'order-management/order-status-management'
                     }
                 ]
             }
@@ -126,14 +126,14 @@ export const defaultNavigation: FuseNavigationItem[] = [
                         title: 'Stock Levels',
                         type: 'basic',
                         icon: 'heroicons_outline:chart-pie', // Icon for stock levels
-                        link: ''
+                        link: 'inventory-management/stock-levels'
                     },
                     {
                         id: 'low-stock-alerts',
                         title: 'Low Stock Alerts',
                         type: 'basic',
                         icon: 'heroicons_outline:exclamation-circle', // Icon for low stock alerts
-                        link: ''
+                        link: 'inventory-management/low-stock-alerts'
                     }
                 ]
             }
@@ -146,10 +146,10 @@ export const defaultNavigation: FuseNavigationItem[] = [
         children: [
             {
                 id: 'reports',
-                title: 'Reports',
+                title: 'Generate Reports',
                 type: 'basic',
                 icon: 'heroicons_outline:document-report', // Icon for reports
-                link: ''
+                link: 'reports/reports'
             }
         ]
     },
