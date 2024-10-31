@@ -1,0 +1,55 @@
+<div class="flex flex-col flex-auto w-full h-full">
+    <div class="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-2 sm:p-4">
+        <div class="bg-white shadow-md rounded-lg p-4 sm:p-6 max-w-5xl w-full mx-2 sm:mx-4">
+            <h1 class="text-2xl sm:text-4xl font-semibold text-gray-800 mb-2 sm:mb-4">Your Shopping Cart</h1>
+            <p class="text-gray-600 mb-2 sm:mb-4">Here are the items you have added to your cart. Select the items you want to purchase.</p>
+
+            <!-- Responsive Table Wrapper -->
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="px-2 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600" />
+                            </th>
+                            <th scope="col" class="px-2 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Product</th>
+                            <th scope="col" class="px-2 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Description</th>
+                            <th scope="col" class="px-2 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Price</th>
+                            <th scope="col" class="px-2 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-2 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600" />
+                            </td>
+                            <td class="px-2 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900">Product 1</td>
+                            <td class="px-2 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">A brief description of product 1.</td>
+                            <td class="px-2 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900">$29.99</td>
+                            <td class="px-2 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                <input type="number" min="1" value="1" class="border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-300 focus:border-blue-500 w-12 sm:w-16 p-1 text-center" />
+                            </td>
+                        </tr>
+                        <!-- Add more products as needed, adapting for small screens -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Buy Now Button -->
+            <button mat-button color="accent" class="mt-4 w-full bg-blue-600 text-white rounded-md p-2 hover:bg-blue-700 transition text-sm sm:text-base">
+                <mat-icon class="mr-1" [svgIcon]="'heroicons_outline:shopping-bag'"></mat-icon>
+                Buy Selected Items
+            </button>
+
+            <!-- Thank You Message -->
+            <p class="text-gray-500 text-sm mt-4 text-center">Thank you for your purchase!</p>
+
+            <!-- Additional Information Section -->
+            <div class="mt-6 border-t pt-4">
+                <h3 class="text-lg font-semibold text-gray-800">Need Help?</h3>
+                <p class="text-gray-600">If you have any questions about your order, please contact our support team.</p>
+                <p class="text-blue-600 underline cursor-pointer">Contact Support</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -14,7 +14,13 @@ export class ViewProductsComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  addToCart() {
+  addToCart(): void {
+    // Check if selectedQuantity is valid
+    if (this.selectedQuantity < 1) {
+      console.error('Invalid quantity selected'); // Log error if quantity is invalid
+      return; // Exit if the quantity is not valid
+    }
+
     const confirmation = this.confirmationService.open({
       title: 'Item Added to Cart',
       message: `Successfully added ${this.selectedQuantity} item(s) to the cart!`,
@@ -36,9 +42,11 @@ export class ViewProductsComponent implements OnInit {
     // Automatically close the confirmation after 3 seconds
     setTimeout(() => {
       confirmation.close(); // Close the confirmation dialog
+      this.resetSelectedQuantity(); // Reset selected quantity after adding to cart
     }, 3000); // 3000 milliseconds = 3 seconds
   }
-  
-  
-  
+
+  private resetSelectedQuantity(): void {
+    this.selectedQuantity = 1; // Reset to default value
+  }
 }
