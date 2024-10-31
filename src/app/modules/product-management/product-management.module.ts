@@ -4,6 +4,11 @@ import { ViewProductsComponent } from './view-products/view-products.component';
 import { AddProductsComponent } from './add-products/add-products.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { Route, RouterModule } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
+import { FuseCardModule } from '@fuse/components/card';
+import { FormsModule } from '@angular/forms';
 
 
 const prodManagement : Route[] = [
@@ -29,6 +34,12 @@ const prodManagement : Route[] = [
   ],
   imports: [
     CommonModule,
+    MatIconModule,
+    MatMenuModule,
+    MatButtonModule,
+    FuseCardModule,
+    FormsModule,
+
     RouterModule.forChild(prodManagement)
   ]
 })

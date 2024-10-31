@@ -6,6 +6,7 @@ import { RolesAndPermissionComponent } from './user-management/roles-and-permiss
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
 
 const Admins: Route [] = [
  {
@@ -29,6 +30,7 @@ const Admins: Route [] = [
     MatIconModule,
     MatMenuModule,
     MatButtonModule,
+    MatTableModule,
 
     RouterModule.forChild(Admins)
   ]

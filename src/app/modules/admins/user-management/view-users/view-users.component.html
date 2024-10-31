@@ -1,10 +1,10 @@
-<div class="flex flex-col flex-auto w-full">
-    <div class="flex flex-wrap w-full max-w-screen-xl mx-auto p-6 md:p-8">
+<div class="flex flex-col flex-auto w-full h-full">
+    <div class="flex flex-col w-full h-full p-0">
 
-        <div class="flex items-center justify-between w-full">
+        <div class="flex items-center justify-between w-full p-6 md:p-8 bg-white shadow-md">
             <div>
                 <div class="text-3xl font-semibold tracking-tight leading-8">Users List</div>
-                <div class="font-medium tracking-tight text-secondary">View , update and Delete User's Information</div>
+                <div class="font-medium tracking-tight text-secondary">View, update, and delete user information</div>
             </div>
             <div class="flex items-center ml-6">
                 <button
@@ -21,8 +21,8 @@
                     [color]="'primary'">
                     <mat-icon
                         class="icon-size-5"
-                        [svgIcon]="'heroicons_solid:save'"></mat-icon>
-                    <span class="ml-2">Export</span>
+                        [svgIcon]="'heroicons_solid:plus'"></mat-icon>
+                    <span class="ml-2">Add</span>
                 </button>
 
                 <!-- Actions menu (visible on xs) -->
@@ -33,12 +33,67 @@
                         <mat-icon [svgIcon]="'heroicons_outline:dots-vertical'"></mat-icon>
                     </button>
                     <mat-menu #actionsMenu="matMenu">
-                        <button mat-menu-item>Export</button>
+                        <button mat-menu-item>Add</button>
                         <button mat-menu-item>Settings</button>
                     </mat-menu>
                 </div>
             </div>
         </div>
+
+            <div class="mat-elevation-z8 overflow-x-auto overflow-y-auto w-full h-full p-2">
+                <table mat-table [dataSource]="dataSource" matSort (matSortChange)="test($event)"
+                    class="w-full bg-white rounded-lg shadow-md">
+
+                    <!-- Dummy Column 1 -->
+                    <ng-container matColumnDef="dummyColumn1">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header
+                            class="px-6 py-4 text-left text-gray-600 font-semibold">
+                            First Name
+                        </th>
+                        <td mat-cell *matCellDef="let element"
+                            class="border-b border-gray-200 px-4 py-4 text-sm font-semibold">
+                            {{ element.dummyColumn1 }}
+                        </td>
+                    </ng-container>
+
+                    <!-- Dummy Column 2 -->
+                    <ng-container matColumnDef="dummyColumn2">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header
+                            class="px-4 py-2 text-left text-gray-600 font-semibold">
+                           Last Name
+                        </th>
+                        <td mat-cell *matCellDef="let element" class="border-b border-gray-200 text-sm px-4 py-2">
+                            {{ element.dummyColumn2 }}
+                        </td>
+                    </ng-container>
+
+                    <!-- Dummy Column 3 -->
+                    <ng-container matColumnDef="dummyColumn3">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header
+                            class="px-4 py-2 text-left text-gray-600 font-semibold">
+                            Username
+                        </th>
+                        <td mat-cell *matCellDef="let element" class="border-b border-gray-200 text-sm px-4 py-2">
+                            {{ element.dummyColumn3 }}
+                        </td>
+                    </ng-container>
+
+                    <!-- Dummy Column 4 -->
+                    <ng-container matColumnDef="dummyColumn4">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header
+                            class="px-4 py-2 text-left text-gray-600 font-semibold">
+                           Password
+                        </th>
+                        <td mat-cell *matCellDef="let element" class="border-b border-gray-200 text-sm px-4 py-2">
+                            {{ element.dummyColumn4 }}
+                        </td>
+                    </ng-container>
+
+                    <!-- Header and Row Definitions -->
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </div>
 
     </div>
 </div>

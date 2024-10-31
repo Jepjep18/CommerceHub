@@ -1,1 +1,167 @@
-<p>view-products works!</p>
+<div class="flex flex-col flex-auto w-full">
+    <div class="flex flex-wrap w-full max-w-screen-xl mx-auto p-6 md:p-8">
+
+        <div class="flex items-center justify-between w-full">
+            <div>
+                <div class="text-3xl font-semibold tracking-tight leading-8">View Products</div>
+                <div class="font-medium tracking-tight text-secondary">Create , read , update , delete user's roles and
+                    permissions</div>
+            </div>
+            <div class="flex items-center ml-6">
+                <button class="hidden sm:inline-flex" mat-stroked-button>
+                    <mat-icon class="icon-size-5" [svgIcon]="'heroicons_solid:cog'"></mat-icon>
+                    <span class="ml-2">Settings</span>
+                </button>
+                <button class="hidden sm:inline-flex ml-3" mat-flat-button [color]="'primary'">
+                    <mat-icon class="icon-size-5" [svgIcon]="'heroicons_solid:save'"></mat-icon>
+                    <span class="ml-2">Export</span>
+                </button>
+
+                <!-- Actions menu (visible on xs) -->
+                <div class="sm:hidden">
+                    <button [matMenuTriggerFor]="actionsMenu" mat-icon-button>
+                        <mat-icon [svgIcon]="'heroicons_outline:dots-vertical'"></mat-icon>
+                    </button>
+                    <mat-menu #actionsMenu="matMenu">
+                        <button mat-menu-item>Export</button>
+                        <button mat-menu-item>Settings</button>
+                    </mat-menu>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex-auto p-6 sm:p-10">
+            <!-- CONTENT GOES HERE -->
+            <div class="flex flex-wrap w-full -m-4">
+                <!-- Card #1 -->
+<fuse-card class="flex flex-col w-1/4 p-4 max-w-xs" [flippable]="true" [face]="'front'" #flippableCardNike="fuseCard">
+    <ng-container fuseCardFront>
+        <img class="object-cover w-full h-48" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&q=80&auto=format&fit=crop" alt="" />
+        <div class="m-4 mb-4">
+            <div class="text-2xl font-semibold leading-tight">Nike Air Max 270</div>
+            <div class="mt-2">Experience unmatched comfort and style with the latest in sneaker technology.</div>
+            <button class="px-3 mt-3" mat-button [color]="'primary'" (click)="flippableCardNike.face = flippableCardNike.face === 'front' ? 'back' : 'front'">
+                Read More
+            </button>
+        </div>
+    </ng-container>
+    <ng-container fuseCardBack>
+        <div class="flex flex-col m-4 p-4 border rounded-lg bg-white shadow-md">
+            <button mat-icon-button (click)="flippableCardNike.face = flippableCardNike.face === 'front' ? 'back' : 'front'">
+                <mat-icon [svgIcon]="'heroicons_outline:arrow-narrow-left'"></mat-icon>
+            </button>
+            <div class="mt-3">
+                <div class="text-2xl font-semibold">Nike Air Max 270</div>
+                <div class="mt-2 text-gray-600">Featuring a large Air unit for cushioning, these shoes are perfect for all-day wear.</div>
+                <div class="mt-4">
+                    <div class="text-lg font-semibold">Stock Availability:</div>
+                    <div>In Stock: <span id="stock-amount" class="font-bold">20</span></div> <!-- Example stock amount -->
+                    <div class="mt-2">
+                        <label for="quantity" class="font-semibold">Select Quantity:</label>
+                        <input id="quantity" type="number" min="1" max="20" [(ngModel)]="selectedQuantity" class="border rounded p-1 w-20 text-center" />
+                    </div>
+                </div>
+                <div class="flex justify-between mt-4">
+                    <button mat-button color="warn" (click)="addToCart()">
+                        <mat-icon class="mr-1" [svgIcon]="'heroicons_outline:shopping-cart'"></mat-icon>
+                        Add to Cart
+                    </button>
+                    <button mat-button color="accent">
+                        <mat-icon class="mr-1" [svgIcon]="'heroicons_outline:shopping-bag'"></mat-icon>
+                        Buy Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</fuse-card>
+
+
+                
+        
+                <!-- Card #2 -->
+                <fuse-card class="flex flex-col w-1/4 p-4 max-w-xs" [flippable]="true" [face]="'front'" #flippableCard02="fuseCard">
+                    <ng-container fuseCardFront>
+                        <img class="object-cover w-full h-48" src="https://images.unsplash.com/photo-1726587912121-ea21fcc57ff8?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+                        <div class="m-4 mb-4">
+                            <div class="text-2xl font-semibold leading-tight">iPhone 16</div>
+                            <div class="mt-2">Experience cutting-edge technology with stunning design and performance.</div>
+                            <button class="px-3 mt-3" mat-button [color]="'primary'" (click)="flippableCard02.face = flippableCard02.face === 'front' ? 'back' : 'front'">
+                                Read More
+                            </button>
+                        </div>
+                    </ng-container>
+                    <ng-container fuseCardBack>
+                        <div class="flex flex-col m-4">
+                            <button mat-icon-button (click)="flippableCard02.face = flippableCard02.face === 'front' ? 'back' : 'front'">
+                                <mat-icon [svgIcon]="'heroicons_outline:arrow-narrow-left'"></mat-icon>
+                            </button>
+                            <div class="mt-3">
+                                <div class="text-2xl font-semibold">iPhone 16</div>
+                                <div class="mt-2">Features include enhanced camera capabilities, improved battery life, and 5G connectivity.</div>
+                            </div>
+                        </div>
+                    </ng-container>
+                </fuse-card>
+
+        
+                <!-- Card #3 -->
+                <fuse-card class="flex flex-col w-1/4 p-4 max-w-xs" [flippable]="true" [face]="'front'" #flippableCard03="fuseCard">
+                    <ng-container fuseCardFront>
+                        <img class="object-cover w-full h-48" src="https://images.unsplash.com/photo-1598698287642-9ceaf9a7a011?q=80&w=1962&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+                        <div class="m-4 mb-4">
+                            <div class="text-2xl font-semibold leading-tight">Wireless Headphones</div>
+                            <div class="mt-2">Enjoy high-quality sound with noise-canceling technology.</div>
+                            <button class="px-3 mt-3" mat-button [color]="'primary'" (click)="flippableCard03.face = flippableCard03.face === 'front' ? 'back' : 'front'">
+                                Read More
+                            </button>
+                        </div>
+                    </ng-container>
+                    <ng-container fuseCardBack>
+                        <div class="flex flex-col m-4">
+                            <button mat-icon-button (click)="flippableCard03.face = flippableCard03.face === 'front' ? 'back' : 'front'">
+                                <mat-icon [svgIcon]="'heroicons_outline:arrow-narrow-left'"></mat-icon>
+                            </button>
+                            <div class="mt-3">
+                                <div class="text-2xl font-semibold">Wireless Headphones</div>
+                                <div class="mt-2">Battery life of up to 20 hours and fast charging support.</div>
+                            </div>
+                        </div>
+                    </ng-container>
+                </fuse-card>
+        
+                <!-- Card #4 -->
+                <fuse-card class="flex flex-col w-1/4 p-4 max-w-xs" [flippable]="true" [face]="'front'" #flippableCard04="fuseCard">
+                    <ng-container fuseCardFront>
+                        <img class="object-cover w-full h-48" src="https://images.unsplash.com/photo-1529359744902-86b2ab9edaea?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+                        <div class="m-4 mb-4">
+                            <div class="text-2xl font-semibold leading-tight">Smart Speaker</div>
+                            <div class="mt-2">Voice-controlled assistant with premium sound quality.</div>
+                            <button class="px-3 mt-3" mat-button [color]="'primary'" (click)="flippableCard04.face = flippableCard04.face === 'front' ? 'back' : 'front'">
+                                Read More
+                            </button>
+                        </div>
+                    </ng-container>
+                    <ng-container fuseCardBack>
+                        <div class="flex flex-col m-4">
+                            <button mat-icon-button (click)="flippableCard04.face = flippableCard04.face === 'front' ? 'back' : 'front'">
+                                <mat-icon [svgIcon]="'heroicons_outline:arrow-narrow-left'"></mat-icon>
+                            </button>
+                            <div class="mt-3">
+                                <div class="text-2xl font-semibold">Smart Speaker</div>
+                                <div class="mt-2">Compatible with most streaming services and smart home devices.</div>
+                            </div>
+                        </div>
+                    </ng-container>
+                </fuse-card>
+        
+                
+        
+            </div>
+        </div>
+        
+        
+
+
+    </div>
+</div>
