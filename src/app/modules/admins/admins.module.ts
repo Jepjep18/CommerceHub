@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { Route, RouterModule } from '@angular/router';
 import { ViewUsersComponent } from './user-management/view-users/view-users.component';
 import { RolesAndPermissionComponent } from './user-management/roles-and-permission/roles-and-permission.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
 
 const Admins: Route [] = [
  {
@@ -23,6 +26,10 @@ const Admins: Route [] = [
   ],
   imports: [
     CommonModule,
+    MatIconModule,
+    MatMenuModule,
+    MatButtonModule,
+
     RouterModule.forChild(Admins)
   ]
 })
